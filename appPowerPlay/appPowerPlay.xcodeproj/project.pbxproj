@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A70100E2229650FC009F4A35 /* AddSupplierVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70100E1229650FC009F4A35 /* AddSupplierVC.swift */; };
 		A7CA7A852295564A0001DC16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA7A842295564A0001DC16 /* AppDelegate.swift */; };
 		A7CA7A872295564A0001DC16 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA7A862295564A0001DC16 /* MainVC.swift */; };
 		A7CA7A8A2295564A0001DC16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7CA7A882295564A0001DC16 /* Main.storyboard */; };
@@ -14,12 +15,12 @@
 		A7CA7A8F2295564B0001DC16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CA7A8E2295564B0001DC16 /* Assets.xcassets */; };
 		A7CA7A922295564B0001DC16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7CA7A902295564B0001DC16 /* LaunchScreen.storyboard */; };
 		A7CA7A9D229561E00001DC16 /* SupplierVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA7A9C229561E00001DC16 /* SupplierVC.swift */; };
-		A7CA7A9F229561FA0001DC16 /* SupplierProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA7A9E229561F90001DC16 /* SupplierProfileVC.swift */; };
 		A7CA7AA1229562310001DC16 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA7AA0229562310001DC16 /* UIViewControllerExt.swift */; };
 		A7CA7AA32295653D0001DC16 /* SupplierNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA7AA22295653D0001DC16 /* SupplierNameCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A70100E1229650FC009F4A35 /* AddSupplierVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSupplierVC.swift; sourceTree = "<group>"; };
 		A7CA7A812295564A0001DC16 /* appPowerPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appPowerPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CA7A842295564A0001DC16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7CA7A862295564A0001DC16 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -29,7 +30,6 @@
 		A7CA7A912295564B0001DC16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7CA7A932295564B0001DC16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7CA7A9C229561E00001DC16 /* SupplierVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierVC.swift; sourceTree = "<group>"; };
-		A7CA7A9E229561F90001DC16 /* SupplierProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierProfileVC.swift; sourceTree = "<group>"; };
 		A7CA7AA0229562310001DC16 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		A7CA7AA22295653D0001DC16 /* SupplierNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierNameCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,7 +82,7 @@
 			children = (
 				A7CA7A862295564A0001DC16 /* MainVC.swift */,
 				A7CA7A9C229561E00001DC16 /* SupplierVC.swift */,
-				A7CA7A9E229561F90001DC16 /* SupplierProfileVC.swift */,
+				A70100E1229650FC009F4A35 /* AddSupplierVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,8 +178,8 @@
 				A7CA7A9D229561E00001DC16 /* SupplierVC.swift in Sources */,
 				A7CA7A872295564A0001DC16 /* MainVC.swift in Sources */,
 				A7CA7AA1229562310001DC16 /* UIViewControllerExt.swift in Sources */,
+				A70100E2229650FC009F4A35 /* AddSupplierVC.swift in Sources */,
 				A7CA7A8D2295564A0001DC16 /* appPowerPlay.xcdatamodeld in Sources */,
-				A7CA7A9F229561FA0001DC16 /* SupplierProfileVC.swift in Sources */,
 				A7CA7A852295564A0001DC16 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

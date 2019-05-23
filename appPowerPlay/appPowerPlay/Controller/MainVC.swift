@@ -8,6 +8,8 @@
 
 import UIKit
 
+let appDelegate = UIApplication.shared.delegate as? AppDelegate
+
 class MainVC: UIViewController {
 
     override func viewDidLoad() {

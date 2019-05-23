@@ -12,8 +12,10 @@ import CoreData
 class SupplierNameCell: UITableViewCell {
 
     @IBOutlet weak var supplierName: UILabel!
+    @IBOutlet weak var supplierContactNumber: UILabel!
     
     func configureCell(supplier: Supplier) {
         self.supplierName.text = supplier.supplierName
+        self.supplierContactNumber.text = String(supplier.supplierContactNumber)
     }
 }
