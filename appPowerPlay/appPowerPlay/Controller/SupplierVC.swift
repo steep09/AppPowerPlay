@@ -30,8 +30,10 @@ class SupplierVC: UIViewController {
         
         supplierTableView.delegate = self
         supplierTableView.dataSource = self
+        
         contactNumber.bindToKeyboard()
-        configureTapGesture()
+        contactNumber.delegate = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,25 +63,13 @@ class SupplierVC: UIViewController {
         dismissDetail()
     }
     
-    private func configureTapGesture()  {
-        
-        let tapGesture = UITapGestureRecognizer(
-            target: self, action: #selector(SupplierVC.handleTap))
-        view.addGestureRecognizer(tapGesture)
-        
-    }
-    @objc func handleTap()  {
-        
-        view.endEditing(true)
-        
-    }
+}
+
+extension SupplierVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        textField.resignFirstResponder()
-        return true
-        
+        self.view.endEditing(true)
+        return false
     }
-    
 }
 
 extension SupplierVC: UITableViewDelegate, UITableViewDataSource {
@@ -95,7 +85,8 @@ extension SupplierVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        guard let itemCatVC = storyboard?.instantiateViewController(withIdentifier: "ItemCatVC") as? ItemCatVC else { return }
+        presentDetail(itemCatVC)
     }
     
     func removeSupplier(atIndexPath indexPath: IndexPath) {
