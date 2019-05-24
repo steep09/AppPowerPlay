@@ -30,6 +30,8 @@ class SupplierVC: UIViewController {
         
         supplierTableView.delegate = self
         supplierTableView.dataSource = self
+        contactNumber.bindToKeyboard()
+        configureTapGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,6 +61,25 @@ class SupplierVC: UIViewController {
         dismissDetail()
     }
     
+    private func configureTapGesture()  {
+        
+        let tapGesture = UITapGestureRecognizer(
+            target: self, action: #selector(SupplierVC.handleTap))
+        view.addGestureRecognizer(tapGesture)
+        
+    }
+    @objc func handleTap()  {
+        
+        view.endEditing(true)
+        
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return true
+        
+    }
+    
 }
 
 extension SupplierVC: UITableViewDelegate, UITableViewDataSource {
@@ -74,8 +95,7 @@ extension SupplierVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let chosenSupplier = supplier[indexPath.row]
-        contactNumber.text = String(chosenSupplier.supplierContactNumber)
+        
     }
     
     func removeSupplier(atIndexPath indexPath: IndexPath) {
@@ -119,25 +139,31 @@ extension SupplierVC: UITableViewDelegate, UITableViewDataSource {
 extension SupplierVC {
     
     func setSupplier(atIndexPath indexPath: IndexPath) {
-        let newContact = Int64(contactNumber.text!)!
-        guard let manageContext = appDelegate?.persistentContainer.viewContext else { return }
-        
-        let chosenSupplier = supplier[indexPath.row]
-        
-        if chosenSupplier.supplierContactNumber != newContact {
-            chosenSupplier.supplierContactNumber = Int64(contactNumber.text!)!
-            supplierTableView.reloadData()
-            contactNumber.text = ""
+        if contactNumber.text == "" {
+            let chosenSupplier = supplier[indexPath.row]
+            contactNumber.text = String(chosenSupplier.supplierContactNumber)
         } else {
-            return
+            let newContact = Int64(contactNumber.text!)!
+            guard let manageContext = appDelegate?.persistentContainer.viewContext else { return }
+            
+            let chosenSupplier = supplier[indexPath.row]
+            
+            if chosenSupplier.supplierContactNumber != newContact {
+                chosenSupplier.supplierContactNumber = Int64(contactNumber.text!)!
+                supplierTableView.reloadData()
+                contactNumber.text = ""
+            } else {
+                return
+            }
+            
+            do {
+                try manageContext.save()
+                print("Successfully set progress")
+            } catch {
+                debugPrint("Could not set progress: \(error.localizedDescription)")
+            }
         }
         
-        do {
-            try manageContext.save()
-            print("Successfully set progress")
-        } catch {
-            debugPrint("Could not set progress: \(error.localizedDescription)")
-        }
     }
     
     func fetch(completion: (_ complete: Bool) -> ()) {

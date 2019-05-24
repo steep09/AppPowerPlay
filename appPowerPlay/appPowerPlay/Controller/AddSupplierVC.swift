@@ -15,7 +15,8 @@ class AddSupplierVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        configureTapGesture()
     }
     
     @IBAction func CreateBtnWasPressed(_ sender: Any) {
@@ -30,6 +31,25 @@ class AddSupplierVC: UIViewController {
     
     @IBAction func backBtnWasPressed(_ sender: Any) {
         dismissDetail()
+    }
+    
+    private func configureTapGesture()  {
+        
+        let tapGesture = UITapGestureRecognizer(
+            target: self, action: #selector(AddSupplierVC.handleTap))
+        view.addGestureRecognizer(tapGesture)
+        
+    }
+    @objc func handleTap()  {
+        
+        view.endEditing(true)
+        
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return true
+        
     }
     
     func save(completion: (_ finished: Bool) -> ()) {

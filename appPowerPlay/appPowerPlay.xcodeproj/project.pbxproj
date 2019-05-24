@@ -17,6 +17,7 @@
 		A7CA7A9D229561E00001DC16 /* SupplierVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA7A9C229561E00001DC16 /* SupplierVC.swift */; };
 		A7CA7AA1229562310001DC16 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA7AA0229562310001DC16 /* UIViewControllerExt.swift */; };
 		A7CA7AA32295653D0001DC16 /* SupplierNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA7AA22295653D0001DC16 /* SupplierNameCell.swift */; };
+		A7FA53FA22978CE500B9852A /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FA53F922978CE500B9852A /* UIViewExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A7CA7A9C229561E00001DC16 /* SupplierVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierVC.swift; sourceTree = "<group>"; };
 		A7CA7AA0229562310001DC16 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		A7CA7AA22295653D0001DC16 /* SupplierNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierNameCell.swift; sourceTree = "<group>"; };
+		A7FA53F922978CE500B9852A /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				A7CA7AA0229562310001DC16 /* UIViewControllerExt.swift */,
+				A7FA53F922978CE500B9852A /* UIViewExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				A7CA7A9D229561E00001DC16 /* SupplierVC.swift in Sources */,
 				A7CA7A872295564A0001DC16 /* MainVC.swift in Sources */,
 				A7CA7AA1229562310001DC16 /* UIViewControllerExt.swift in Sources */,
+				A7FA53FA22978CE500B9852A /* UIViewExt.swift in Sources */,
 				A70100E2229650FC009F4A35 /* AddSupplierVC.swift in Sources */,
 				A7CA7A8D2295564A0001DC16 /* appPowerPlay.xcdatamodeld in Sources */,
 				A7CA7A852295564A0001DC16 /* AppDelegate.swift in Sources */,
