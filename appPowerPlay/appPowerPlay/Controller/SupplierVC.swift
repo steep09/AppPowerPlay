@@ -85,7 +85,9 @@ extension SupplierVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let chosenSupplier = supplier[indexPath.row]
         guard let itemCatVC = storyboard?.instantiateViewController(withIdentifier: "ItemCatVC") as? ItemCatVC else { return }
+        itemCatVC.initData(name: chosenSupplier.supplierName!, number: Int(chosenSupplier.supplierContactNumber))
         presentDetail(itemCatVC)
     }
     

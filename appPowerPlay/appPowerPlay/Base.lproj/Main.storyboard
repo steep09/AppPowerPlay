@@ -211,7 +211,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="elV-dj-79t">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elV-dj-79t">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCc-nk-gpQ">
@@ -221,8 +221,8 @@
                                             <action selector="backBtnWasPressed:" destination="AaL-41-eE3" eventType="touchUpInside" id="vkJ-pd-2hG"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add supplier" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RL6-2a-bN5">
-                                        <rect key="frame" x="134" y="110" width="147" height="35"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="supplier name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RL6-2a-bN5">
+                                        <rect key="frame" x="125" y="110" width="166" height="35"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -231,18 +231,26 @@
                                 <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.21959361690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="0bd-Nb-Ttj"/>
-                                    <constraint firstItem="RL6-2a-bN5" firstAttribute="leading" secondItem="elV-dj-79t" secondAttribute="leading" constant="134" id="AvB-x2-9vi"/>
+                                    <constraint firstItem="RL6-2a-bN5" firstAttribute="leading" secondItem="elV-dj-79t" secondAttribute="leading" constant="125" id="AvB-x2-9vi"/>
                                     <constraint firstAttribute="bottom" secondItem="RL6-2a-bN5" secondAttribute="bottom" constant="25" id="LU7-dP-ITH"/>
                                     <constraint firstItem="RL6-2a-bN5" firstAttribute="top" secondItem="elV-dj-79t" secondAttribute="top" constant="110" id="O6V-bm-uVF"/>
-                                    <constraint firstAttribute="trailing" secondItem="RL6-2a-bN5" secondAttribute="trailing" constant="133" id="ZCk-IV-cHI"/>
+                                    <constraint firstAttribute="trailing" secondItem="RL6-2a-bN5" secondAttribute="trailing" constant="123" id="ZCk-IV-cHI"/>
                                     <constraint firstItem="GCc-nk-gpQ" firstAttribute="centerY" secondItem="RL6-2a-bN5" secondAttribute="centerY" id="iEt-IS-OCn"/>
                                     <constraint firstItem="GCc-nk-gpQ" firstAttribute="leading" secondItem="elV-dj-79t" secondAttribute="leading" constant="20" id="oe2-6o-tSt"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="elV-dj-79t" firstAttribute="trailing" secondItem="eo0-sJ-Dpo" secondAttribute="trailing" id="q2X-oo-ggV"/>
+                            <constraint firstItem="elV-dj-79t" firstAttribute="leading" secondItem="eo0-sJ-Dpo" secondAttribute="leading" id="qRt-Mc-DWA"/>
+                            <constraint firstItem="elV-dj-79t" firstAttribute="top" secondItem="u0h-E0-cdv" secondAttribute="top" id="xSZ-sx-h5L"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="eo0-sJ-Dpo"/>
                     </view>
+                    <connections>
+                        <outlet property="itemNameLbl" destination="RL6-2a-bN5" id="d6E-ND-M4d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afW-GY-WUx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
