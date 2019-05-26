@@ -31,7 +31,6 @@ class SupplierVC: UIViewController {
         supplierTableView.delegate = self
         supplierTableView.dataSource = self
         
-        contactNumber.bindToKeyboard()
         contactNumber.delegate = self
         
     }
@@ -65,6 +64,7 @@ class SupplierVC: UIViewController {
     
 }
 
+//Hide keyboard when return button was pressed
 extension SupplierVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -87,7 +87,7 @@ extension SupplierVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let chosenSupplier = supplier[indexPath.row]
         guard let itemCatVC = storyboard?.instantiateViewController(withIdentifier: "ItemCatVC") as? ItemCatVC else { return }
-        itemCatVC.initData(name: chosenSupplier.supplierName!, number: Int(chosenSupplier.supplierContactNumber))
+        itemCatVC.initData(supplier: chosenSupplier)
         presentDetail(itemCatVC)
     }
     
@@ -131,7 +131,9 @@ extension SupplierVC: UITableViewDelegate, UITableViewDataSource {
 
 extension SupplierVC {
     
+    //edit supplier contact number
     func setSupplier(atIndexPath indexPath: IndexPath) {
+        
         if contactNumber.text == "" {
             let chosenSupplier = supplier[indexPath.row]
             contactNumber.text = String(chosenSupplier.supplierContactNumber)

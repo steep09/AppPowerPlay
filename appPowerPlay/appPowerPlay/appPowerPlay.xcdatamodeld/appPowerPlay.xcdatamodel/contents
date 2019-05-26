@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="ItemCategory" representedClassName="ItemCategory" syncable="YES" codeGenerationType="class">
+    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+        <attribute name="itemNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="itemPrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="itemType" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="itemStock" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemSubCategory" inverseName="itemType" inverseEntity="ItemSubCategory" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="supplier" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Supplier" inverseName="itemCat" inverseEntity="Supplier" syncable="YES"/>
-    </entity>
-    <entity name="ItemSubCategory" representedClassName="ItemSubCategory" syncable="YES" codeGenerationType="class">
-        <attribute name="stockNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="stockPrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="stockQuantity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="itemType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ItemCategory" inverseName="itemStock" inverseEntity="ItemCategory" syncable="YES"/>
     </entity>
     <entity name="Supplier" representedClassName="Supplier" syncable="YES" codeGenerationType="class">
         <attribute name="supplierContactNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="supplierName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="itemCat" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemCategory" inverseName="supplier" inverseEntity="ItemCategory" syncable="YES"/>
+        <relationship name="itemCat" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="supplier" inverseEntity="Item" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ItemSubCategory" positionX="-54" positionY="18" width="128" height="105"/>
+        <element name="Item" positionX="-45" positionY="63" width="128" height="120"/>
         <element name="Supplier" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="ItemCategory" positionX="-45" positionY="63" width="128" height="90"/>
     </elements>
 </model>

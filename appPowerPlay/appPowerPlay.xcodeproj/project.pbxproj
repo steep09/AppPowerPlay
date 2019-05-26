@@ -19,6 +19,7 @@
 		A7CA7AA32295653D0001DC16 /* SupplierNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CA7AA22295653D0001DC16 /* SupplierNameCell.swift */; };
 		A7FA53FA22978CE500B9852A /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FA53F922978CE500B9852A /* UIViewExt.swift */; };
 		A7FA53FC22978EE100B9852A /* ItemCatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FA53FB22978EE100B9852A /* ItemCatVC.swift */; };
+		A7FA53FF2297D99600B9852A /* itemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FA53FE2297D99600B9852A /* itemType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		A7CA7AA22295653D0001DC16 /* SupplierNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierNameCell.swift; sourceTree = "<group>"; };
 		A7FA53F922978CE500B9852A /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		A7FA53FB22978EE100B9852A /* ItemCatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCatVC.swift; sourceTree = "<group>"; };
+		A7FA53FE2297D99600B9852A /* itemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		A7CA7A832295564A0001DC16 /* appPowerPlay */ = {
 			isa = PBXGroup;
 			children = (
+				A7FA53FD2297D96200B9852A /* Enum */,
 				A7CA7A9B229561060001DC16 /* Extension */,
 				A7CA7A9A229561000001DC16 /* View */,
 				A7CA7A99229560F90001DC16 /* Controller */,
@@ -107,6 +110,14 @@
 				A7FA53F922978CE500B9852A /* UIViewExt.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		A7FA53FD2297D96200B9852A /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				A7FA53FE2297D99600B9852A /* itemType.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +196,7 @@
 				A7CA7A872295564A0001DC16 /* MainVC.swift in Sources */,
 				A7CA7AA1229562310001DC16 /* UIViewControllerExt.swift in Sources */,
 				A7FA53FA22978CE500B9852A /* UIViewExt.swift in Sources */,
+				A7FA53FF2297D99600B9852A /* itemType.swift in Sources */,
 				A70100E2229650FC009F4A35 /* AddSupplierVC.swift in Sources */,
 				A7CA7A8D2295564A0001DC16 /* appPowerPlay.xcdatamodeld in Sources */,
 				A7CA7A852295564A0001DC16 /* AppDelegate.swift in Sources */,

@@ -13,21 +13,46 @@ class ItemCatVC: UIViewController {
 
     @IBOutlet weak var itemNameLbl: UILabel!
     
-    var supplierName: String!
-    var supplierNumber: Int!
+    @IBOutlet weak var itemCatTableView: UITableView!
     
-    func initData(name: String, number: Int) {
-        self.supplierName = name
-        self.supplierNumber = number
+    var itemType: ItemType = .shirt
+    var itemCat: [Item] = []
+    
+    var supplierName: String!
+    var supplierNumber: Int64!
+    var supplierItem: NSSet!
+    
+    func initData(supplier: Supplier) {
+        self.supplierName = supplier.supplierName
+        self.supplierNumber = supplier.supplierContactNumber
+        self.supplierItem = supplier.itemCat
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        itemCatTableView.delegate = self
+        itemCatTableView.dataSource = self
 
         itemNameLbl.text = supplierName
     }
 
     @IBAction func backBtnWasPressed(_ sender: Any) {
         dismissDetail()
+        
+        
     }
+}
+
+extension ItemCatVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return itemCat.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    
 }
