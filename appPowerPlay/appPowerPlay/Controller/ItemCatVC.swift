@@ -16,7 +16,6 @@ class ItemCatVC: UIViewController {
     @IBOutlet weak var itemCatTableView: UITableView!
     
     var itemType: ItemType = .shirt
-    var itemCat: [Item] = []
     
     var supplierName: String!
     var supplierNumber: Int64!
@@ -37,10 +36,13 @@ class ItemCatVC: UIViewController {
         itemNameLbl.text = supplierName
     }
 
+    @IBAction func AddItemBtnWasPressed(_ sender: Any) {
+        guard let addItemVC = storyboard?.instantiateViewController(withIdentifier: "AddItemVC") as? AddItemVC else { return }
+        presentDetail(addItemVC)
+    }
+    
     @IBAction func backBtnWasPressed(_ sender: Any) {
         dismissDetail()
-        
-        
     }
 }
 
