@@ -16,6 +16,7 @@ class ItemCatVC: UIViewController {
     @IBOutlet weak var itemCatTableView: UITableView!
     
     var itemType: ItemType = .shirt
+    var item: [Item] = []
     
     var supplierName: String!
     var supplierNumber: Int64!
@@ -35,6 +36,24 @@ class ItemCatVC: UIViewController {
 
         itemNameLbl.text = supplierName
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchCoreDataObjects()
+        itemCatTableView.reloadData()
+    }
+    
+    func fetchCoreDataObjects() {
+        self.fetch{ (complete) in
+            if complete {
+                if item.count >= 1 {
+                    itemCatTableView.isHidden = false
+                } else {
+                    itemCatTableView.isHidden = true
+                }
+            }
+        }
+    }
 
     @IBAction func AddItemBtnWasPressed(_ sender: Any) {
         guard let addItemVC = storyboard?.instantiateViewController(withIdentifier: "AddItemVC") as? AddItemVC else { return }
@@ -49,12 +68,62 @@ class ItemCatVC: UIViewController {
 extension ItemCatVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return item.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "itemDescriptionCell") as? itemDescriptionCell else { return UITableViewCell() }
+        cell.configureCell(item: item[indexPath.row])
+        return cell
     }
     
+    func removeItem(atIndexPath indexPath: IndexPath) {
+        guard let manageContext = appDelegate?.persistentContainer.viewContext else { return }
+        
+        manageContext.delete(item[indexPath.row])
+        
+        do {
+            try manageContext.save()
+        } catch {
+            debugPrint("Could not remove: \(error.localizedDescription)")
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "DELETE") { (rowAction, indexPath) in
+            self.removeItem(atIndexPath: indexPath)
+            self.fetchCoreDataObjects()
+            self.itemCatTableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        
+        deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1)
+        return [deleteAction]
+    }
+    
+}
+
+extension ItemCatVC {
+    
+    func fetch(completion: (_ complete: Bool) -> ()) {
+        guard let manageContext = appDelegate?.persistentContainer.viewContext else { return }
+        
+        let fetchRequest = NSFetchRequest<Item>(entityName: "Item")
+        
+        do {
+            item = try manageContext.fetch(fetchRequest)
+            completion(true)
+        } catch {
+            debugPrint("Could not fetch: \(error.localizedDescription)")
+            completion(false)
+        }
+    }
     
 }

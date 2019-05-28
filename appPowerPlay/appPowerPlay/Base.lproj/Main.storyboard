@@ -347,7 +347,6 @@
         <!--Add ItemVC-->
         <scene sceneID="wQm-qj-bPU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QNs-le-uYk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="AddItemVC" id="SUS-gF-Gkk" customClass="AddItemVC" customModule="appPowerPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m0Y-L7-xWd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -361,7 +360,6 @@
                                         <state key="normal" title="back" image="back"/>
                                         <connections>
                                             <action selector="backBtnWasPressed:" destination="SUS-gF-Gkk" eventType="touchUpInside" id="GF5-UO-f45"/>
-                                            <action selector="backBtnWasPressed:" destination="Iok-yA-7ve" eventType="touchUpInside" id="hvZ-TJ-rbo"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="add item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ja-AD-amR">
@@ -432,7 +430,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="CreateBtnWasPressed:" destination="Iok-yA-7ve" eventType="touchUpInside" id="OTk-UJ-aDa"/>
+                                    <action selector="addItemBtnWasPressed:" destination="SUS-gF-Gkk" eventType="touchUpInside" id="On7-By-MEO"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PdS-CU-4sm">
@@ -499,10 +497,14 @@
                     <connections>
                         <outlet property="blouseBtn" destination="mWz-0T-mn2" id="QTv-jI-XgL"/>
                         <outlet property="dressBtn" destination="MhN-EM-dw1" id="rYC-Dc-FJP"/>
+                        <outlet property="itemNumberTxtField" destination="LBY-eR-nan" id="Wuv-fo-9TD"/>
+                        <outlet property="itemPriceTxtField" destination="DbV-kY-qmR" id="UD2-wg-ewx"/>
+                        <outlet property="itemQuantityTxtField" destination="ezn-h3-ZfR" id="clB-E0-kW6"/>
                         <outlet property="pairBtn" destination="f6E-Dz-Hm6" id="qgh-dh-L4J"/>
                         <outlet property="tshirtBtn" destination="MfK-8e-2fv" id="AS0-KJ-E0s"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QNs-le-uYk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2131.8840579710145" y="-528.34821428571422"/>
         </scene>
@@ -518,7 +520,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOj-se-TSW">
-                                        <rect key="frame" x="20" y="115" width="54" height="25"/>
+                                        <rect key="frame" x="20" y="116.5" width="56" height="22"/>
                                         <state key="normal" title="back" image="back"/>
                                         <connections>
                                             <action selector="backBtnWasPressed:" destination="Iok-yA-7ve" eventType="touchUpInside" id="Ozj-oH-Pr7"/>
